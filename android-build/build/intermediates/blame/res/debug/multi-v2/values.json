@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/USERS/ELEVES/SNIR2020/ffarvacque/Documents/Travail/Projet/ProjetRucheFarvacque/ProjetRucheApplicationNonDef/android-build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/home/USERS/ELEVES/SNIR2020/ffarvacque/Documents/Travail/Projet/ProjetRucheFarvacque/ProjetRucheApplicationNonDef/android-build/res/values/libs.xml",
+                    "from": {
+                        "startLines": "9,37,13,2",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "292,1615,347,55",
+                        "endLines": "11,39,35,4",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "341,1842,1609,166"
+                    },
+                    "to": {
+                        "startLines": "2,5,8,31",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,341,1608",
+                        "endLines": "4,7,30,33",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "104,336,1603,1719"
+                    }
+                },
+                {
+                    "source": "/opt/Qt/5.15.0/android/src/android/java/res/values/strings.xml",
+                    "from": {
+                        "startLines": "5,4,3,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "319,197,85,427",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "422,314,192,520"
+                    },
+                    "to": {
+                        "startLines": "34,35,36,37",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1724,1832,1954,2066",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "1827,1949,2061,2159"
+                    }
+                }
+            ]
+        }
+    ]
+}
