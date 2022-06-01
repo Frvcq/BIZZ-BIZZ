@@ -99,6 +99,13 @@ Window {
 
 
                                     }
+                                    onPressAndHold: {
+                                        console.log("visibilite : "+this.visible);
+                                        Controller.supprimerLeBouton(this);
+                                        this.visible=false;
+                                        console.log("visibilite : "+this.visible);
+                                        //boutton1.visible=false;
+                                    }
                                 }
 
                             }
@@ -110,9 +117,7 @@ Window {
                                 transformOrigin: Item.Center
                                 font.pointSize: 25
                                 Component.onCompleted: {
-                                    console.log("jai chargé");
                                     Controller.chargerLesBoutons();
-
                                 }
                                 onClicked:{
                                     stackMain.push("formulaire.qml");

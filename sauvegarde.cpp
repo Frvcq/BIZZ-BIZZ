@@ -110,6 +110,7 @@ void Sauvegarde::sauvegarderDesCanaux()
     paramSocket.setValue("idCanal",idCanal);
     paramSocket.setValue("nomCanal",nomCanal);
     paramSocket.endGroup();
+
 }
 /**
  * @brief Sauvegarde::chargerLesCanaux méthode permettant de charger les informations présentent dans
@@ -121,17 +122,26 @@ void Sauvegarde::chargerLesCanaux()
     QString nomFichierIni="Canal.ini";
     QFileInfo testFichier(nomFichierIni);
     //on vérifie si la chose  existe et qu'elle est un fichier
-    if (testFichier.exists() && testFichier.isFile()){
+    if (testFichier.exists() && testFichier.isFile() && testFichier.size()>0){
         leFichierExiste = true;
         QSettings paramSocket(nomFichierIni,QSettings::IniFormat);
         //on a le droit que a 15 boutons maximums
-        for (int i =0 ;i<15;i++){
-            idCanalChargement.append(paramSocket.value("BOUTON"+QString::number(i)+"/idCanal").toString());
-            nomCanalChargement.append(paramSocket.value("BOUTON"+QString::number(i)+"/nomCanal").toString());
+        for (int i =0 ;i<15;i++){           
+                idCanalChargement.append(paramSocket.value("BOUTON"+QString::number(i)+"/idCanal").toString());
+                nomCanalChargement.append(paramSocket.value("BOUTON"+QString::number(i)+"/nomCanal").toString());
         }
     }
     // si le fichier n'existe pas alors on prévient leFichierExiste
     else {
         leFichierExiste = false;
     }
+}
+
+void Sauvegarde::supprimerCanal()
+{
+    QString nomFichierIni="Canal.ini";
+    QFileInfo testFichier(nomFichierIni);
+    QSettings paramSocket(nomFichierIni,QSettings::IniFormat);
+   // paramSocket.beginGroup("BOUTON"+QString::number(position));
+    paramSocket.remove("BOUTON"+QString::number(position));
 }

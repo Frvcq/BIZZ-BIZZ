@@ -188,22 +188,32 @@ function ajouterBouton(){
     laSauvegarde.sauvegarderDesCanaux();
 
 }
+/*Fonction permettant de charger les boutons depuis un fichier.ini*/
 function chargerLesBoutons(){
     let i =0;
     //on charge le fichier pour mettre à jour les attributs de l'objet laSauvegarde
     laSauvegarde.chargerLesCanaux();
     // on vérifie si le fichier existe pour éviter de remplir nos boutons avec des undifined
     if (laSauvegarde.leFichierExiste == true){
-        do {
-            //on met à jour le texte de notre bouton et on le rend visible
-            repeaterBouton.itemAt(i).text = laSauvegarde.nomCanalChargement[i] +", canal : "+laSauvegarde.idCanalChargement[i];
-            repeaterBouton.itemAt(i).visible = true;
-            i++
-            //si l'on a plus de données à afficher on quitte la boucle
-        }while(laSauvegarde.idCanalChargement[i]!=="");
+        for (i=0 ;i<15;i++){
+            if(laSauvegarde.idCanalChargement[i]!==""){
+                repeaterBouton.itemAt(i).text = laSauvegarde.nomCanalChargement[i] +", canal : "+laSauvegarde.idCanalChargement[i];
+                repeaterBouton.itemAt(i).visible = true;
+            }
+        }
 
     }
 
 
+}
+/*Fonction qui permet de supprimer un bouton dans le fichier.ini*/
+function supprimerLeBouton(leBouton){
+    for (let i =0 ;i<15;i++){
+        if (repeaterBouton.itemAt(i)===leBouton){
+            laSauvegarde.position = i;
+        }
+    }
+    laSauvegarde.supprimerCanal();
+    chargerLesBoutons();
 }
 

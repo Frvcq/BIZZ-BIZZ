@@ -32,6 +32,7 @@ public:
     ~Sauvegarde();
     Q_INVOKABLE void sauvegarderDesCanaux();
     Q_INVOKABLE void chargerLesCanaux();
+    Q_INVOKABLE void supprimerCanal();
     int getPosition() const;
     void setPosition(int value);
     QString getIdCanal() const;
